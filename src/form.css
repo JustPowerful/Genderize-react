@@ -1,0 +1,18 @@
+button {
+  cursor: pointer;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: rgb(42, 216, 120);
+  color: white;
+  padding: 9px 15px;
+  border: none;
+}
+
+input {
+  color: grey;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 8px 15px;
+  outline: none;
+  border: dashed 1px rgb(42, 216, 120);
+}
