@@ -6,7 +6,8 @@ class Form extends React.Component {
     super();
     this.state = {
       personName: "",
-      gender: ""
+      gender: "",
+      loading: false
     };
     this.inputHander = this.inputHander.bind(this);
     this.sendQuery = this.sendQuery.bind(this);
@@ -20,22 +21,30 @@ class Form extends React.Component {
   }
 
   sendQuery(event) {
+    this.setState({ loading: true });
     event.preventDefault();
     fetch(`https://api.genderize.io?name=${this.state.personName}`)
       .then((res) => res.json())
-      .then((data) => this.setState({ gender: data.gender }));
+      .then((data) => this.setState({ gender: data.gender, loading: false }));
   }
 
   render() {
     return (
-      <div>
+      <div className="formDivider">
         <form>
           <input type="text" onChange={this.inputHander} />
           <button onClick={this.sendQuery}>Submit</button>
         </form>
 
         <h3>Name: {this.state.personName}</h3>
-        <h3>Gender: {this.state.gender}</h3>
+        <h3>
+          Gender:{" "}
+          {this.state.loading
+            ? "Loading ..."
+            : this.state.gender
+            ? this.state.gender
+            : "Can't find a gender for that!"}
+        </h3>
       </div>
     );
   }

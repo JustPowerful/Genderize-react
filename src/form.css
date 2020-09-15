@@ -15,4 +15,22 @@ input {
   padding: 8px 15px;
   outline: none;
   border: dashed 1px rgb(42, 216, 120);
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 200;
+  color: rgb(0, 134, 60);
+}
+
+.formDivider {
+  min-width: 300px;
+  border-radius: 15px;
+  border: solid rgb(42, 216, 120) 2px;
+
+  padding: 20px 0;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
 }
